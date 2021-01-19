@@ -7,6 +7,7 @@ function randomNum() {
 
 // DESTINATION Function that returns a randomly genenrated destination
 function destination(num) {
+  // num parameter is a randomly generated number by calling the randomnum function as argument
   let destinationsArray = [
     "Milan",
     "Paris",
@@ -17,7 +18,25 @@ function destination(num) {
     "Durban",
     "London",
     "Zurich",
-    "Marekesh",
+    "Marrakech",
   ];
   return destinationsArray[num];
+}
+
+// DESTINATION Function that returns a randomly genenrated destination
+function restaurant(num) {
+  // num parameter is a randomly generated number by calling the randomnum function as argument
+  let restaurantsArray = [
+    "Massimo del Gelato",
+    "Le Cantine de Meme",
+    "Redbird",
+    "Al Dawaar",
+    "Tordesilhas",
+    "Zeughauskeller",
+    "The Ledbury",
+    "Joop's Place",
+    "Buuddakan",
+    "Votre Table",
+  ];
+  return restaurantsArray[num];
 }
