@@ -40,3 +40,16 @@ function restaurant(num) {
   ];
   return restaurantsArray[num];
 }
+
+// DESTINATION Function that returns a randomly genenrated destination
+function transport(num) {
+  // num parameter is a randomly generated number by calling the randomnum function as argument
+  let meansOfTransport = [
+    "foot",
+    "teleport",
+    "flyinig carpet",
+    "cartwheel",
+    "carjacking",
+  ];
+  return meansOfTransport[num];
+}
