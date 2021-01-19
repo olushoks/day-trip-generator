@@ -23,7 +23,7 @@ function destination(num) {
   return destinationsArray[num];
 }
 
-// DESTINATION Function that returns a randomly genenrated destination
+// RESTAURANNT Function that returns a randomly genenrated destination
 function restaurant(num) {
   // num parameter is a randomly generated number by calling the randomnum function as argument
   let restaurantsArray = [
@@ -41,7 +41,7 @@ function restaurant(num) {
   return restaurantsArray[num];
 }
 
-// DESTINATION Function that returns a randomly genenrated destination
+// TRANSPORTATION Function that returns a randomly genenrated destination
 function transport(num) {
   // num parameter is a randomly generated number by calling the randomnum function as argument
   let meansOfTransport = [
@@ -52,4 +52,22 @@ function transport(num) {
     "carjacking",
   ];
   return meansOfTransport[num];
+}
+
+// ENTERTAINMENT Function that returns a randomly genenrated destination
+function entertainment(num) {
+  // num parameter is a randomly generated number by calling the randomnum function as argument
+  let entertainmentArray = [
+    "Open Mic Night",
+    "Circus",
+    "Magic Show",
+    "Food Festival",
+    "Carnival",
+    "Sporting Event",
+    "Pet Show",
+    "Concert",
+    "Book Reading Event",
+    "Movies",
+  ];
+  return entertainmentArray[num];
 }
