@@ -1,5 +1,5 @@
 /************************ DAY TRIP GENERATOR ********************/
-// Function that generates RANDOM number
+// Function that generates RANDOM number passed as argument into the arrays below
 function randomNum() {
   let number = Math.trunc(Math.random() * 9) + 1;
   return number;
@@ -23,7 +23,7 @@ function destination(num) {
   return destinationsArray[num];
 }
 
-// RESTAURANNT Function that returns a randomly genenrated destination
+// RESTAURANNT Function that returns a randomly genenrated restaurant
 function restaurant(num) {
   // num parameter is a randomly generated number by calling the randomnum function as argument
   const restaurantsArray = [
@@ -41,7 +41,7 @@ function restaurant(num) {
   return restaurantsArray[num];
 }
 
-// TRANSPORTATION Function that returns a randomly genenrated destination
+// TRANSPORTATION Function that returns a randomly genenrated transportation
 function transport(num) {
   // num parameter is a randomly generated number by calling the randomnum function as argument
   const meansOfTransport = [
@@ -59,7 +59,7 @@ function transport(num) {
   return meansOfTransport[num];
 }
 
-// ENTERTAINMENT Function that returns a randomly genenrated destination
+// ENTERTAINMENT Function that returns a randomly genenrated entertainment
 function entertainment(num) {
   // num parameter is a randomly generated number by calling the randomnum function as argument
   const entertainmentArray = [
@@ -77,13 +77,13 @@ function entertainment(num) {
   return entertainmentArray[num];
 }
 
-// function that displays trip summary to member in a confirm modal box
+// function that returns trip summary and displays to member in a confirm modal box
 function summary(name, dest, rest, trans, ent) {
   let summaryPhrase = `${name},\nBelow is the summary of your day trip: \n\nYour destiniation is ${dest}.\nYour restaurant is ${rest}.\nYour mode of transportation is ${trans}.\nYour entertainment option is ${ent}.\n\nClick 'OK' to accept this selection OR 'Cancel' for another random selection`;
   return summaryPhrase;
 }
 
-// function that displays trip details to member in the log after the summary is accepted
+// function that returns trip details and displays to member in the log after the summary is accepted
 function details(name, dest, rest, trans, ent) {
   let detailsPhrase = `Dear ${name},\nWe are so excited to be able to plan your upcoming day trip, as a leader in the hospitality industry, we are committed to giving our clients a top notch experience that ensures value for money.\n\nKindly find below your trip details:\n\nWe have carefully selected ${dest} because of the great atmosphere it offers during the fall. You would love to return again!\nFor your feediing, there is no other place better than the acclaimed ${rest}, the food tastes so good it is rumored to have put many private chefs out of work😂.\nOn trips as this, transportation is key, always remember you can go anywhere by ${trans}.\nLastly, your trip will not be complete without entertaining yourself by attending a ${ent}.\n\nPlease let us know if you need further clarification.\nYour dayTrip Team!`;
   return detailsPhrase;
@@ -93,6 +93,7 @@ function details(name, dest, rest, trans, ent) {
 function reselect(option) {
   let newSummary;
   if (option == 1) {
+    // generate another random destination
     newSummary = summary(
       name,
       destination(randomNum()),
@@ -101,6 +102,7 @@ function reselect(option) {
       entertainmentChoice
     );
   } else if (option == 2) {
+    // generate another random restaurant
     newSummary = summary(
       name,
       destinationChoice,
@@ -109,6 +111,7 @@ function reselect(option) {
       entertainmentChoice
     );
   } else if (option == 3) {
+    // generate another random transport
     newSummary = summary(
       name,
       destinationChoice,
@@ -117,11 +120,21 @@ function reselect(option) {
       entertainmentChoice
     );
   } else if (option == 4) {
+    // generate another random entertainment
     newSummary = summary(
       name,
       destinationChoice,
       restaurantChoice,
       transportChoice,
+      entertainment(randomNum())
+    );
+  } else if (option == 5) {
+    // generate new randoms for ALL
+    newSummary = summary(
+      name,
+      destination(randomNum()),
+      restaurant(randomNum()),
+      transport(randomNum()),
       entertainment(randomNum())
     );
   }
@@ -191,10 +204,3 @@ if (agree) {
     console.log(tripDetails);
   }
 }
-
-/*
-let tripSummary = `${name},\nBelow is the summary of your day trip: \n\nYour destiniation is ${destinationChoice}.\nYour restaurant is ${restaurantChoice}.\nYour mode of transportation is ${transportChoice}.\nYour entertainment option is ${entertainmentChoice}.\n\nClick 'OK' to accept this selection OR 'Cancel' for another random selection`;
-*/
-/*
-let tripDetails = `We are so excited to be able to plan your upcoming day trip, as a leader in the hospitality industry, we are committed to giving our clients a top notch experience that ensures value for money.\n\nKindly find below your trip details:\n\nWe have carefully selected ${destinationChoice} because of the great atmosphere it offers during the fall. You would love to return again!\nFor your feediing, there is no other place better than the acclaimed ${restaurantChoice}, the food tastes so good it is rumored to have put many private chefs out of work😂.\nOn trips as this, transportation is key, always remember you can go anywhere by ${transportChoice}.\n Lastly, your trip will not be complete without entertaining yourself by attending a ${entertainmentChoice}.\n\nPlease let us know if you need further clarification.\nYour dayTrip Team!`;
-*/
