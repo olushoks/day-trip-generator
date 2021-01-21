@@ -1,3 +1,4 @@
+"use strict";
 /************************ DAY TRIP GENERATOR ********************/
 // Function that generates RANDOM number passed as argument into the arrays below
 function randomNum() {
